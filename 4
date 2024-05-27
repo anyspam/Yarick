@@ -1,0 +1,173 @@
+print('задание 1')
+lst = [
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9],
+]
+print(lst[0][1])
+print(lst[1][0])
+print(lst[2][1])
+print('задание 2')
+lst = [
+	['a', 'b'],
+	{'c': 1, 'd': 2},
+	{'e': 3, 'f': 4}
+]
+print(lst[1]['c']) 
+print(lst[2]['e']) 
+print('задание 3')
+lst = [
+	[
+		['a', 'b'],
+		['c', 'd'],
+	],
+	[
+		['e', 'f'],
+		['g', 'h'],
+	]
+]
+print(lst[0][0][0],lst[0][1][0],lst[1][0][1],lst[1][1][0]) 
+print('задание 4')
+lst = [
+	[
+		[1, 2],
+		[3, 4],
+	],
+	[
+		[5, 6],
+		[7, 8],
+	],
+]
+print(lst[0][0][0] + lst[0][0][1] + lst[0][1][0] + lst[0][1][1] + lst[1][0][0] + lst[1][0][1] + lst[1][1][0] + lst[1][1][1])
+print('задание 5')
+lst = [
+	[1, 2, 3],
+	[4, 5, 6],
+	[7, 8, 9]
+]
+for sub in lst:
+	for el in sub:
+		print(el)
+print('задание 6')
+lst = [
+	[2, 4, 6],
+	[3, 5, 7],
+	[9, 12, 15]
+]
+sum = 0
+for sub in lst:
+	for el in sub:
+		sum += el
+print(sum)
+print('задание 7')
+lst = [
+	['a', 'b', 'c'],
+	['d', 'e', 'f'],
+	['g', 'h', 'i']
+]
+stroka = ""
+for sub in lst:
+	for el in sub:
+		stroka += str(el)
+print (stroka)		
+print("задание 8")
+lst = [
+	[
+		['q', 'w', 'e'],
+		['r', 't', 'y'],
+		['u', 'i', 'o'],
+	],
+	[
+		['p', 'a', 's'],
+		['d', 'f', 'g'],
+		['h', 'j', 'k'],
+	],
+	[
+		['l', 'z', 'x'],
+		['c', 'v', 'b'],
+		['n', 'm', 'q'],
+	],
+]
+for i in lst:
+    for j in i:
+        for q in j:
+            print(q)
+print("задание 9")
+lst = [
+	[
+		[1, 3],
+		[5, 7],
+	],
+	[
+		[2, 4],
+		[6, 8],
+	],
+]
+sum = 0
+for i in lst:
+    for j in i:
+        for q in j:
+            sum+= q
+print(sum)
+print("задание 10")
+lst = [
+	{
+		'a': 1,
+		'b': 2,
+		'c': 3
+	},
+	{
+		'a': 4,
+		'b': 5,
+		'c': 6
+	},
+	{
+		'a': 7,
+		'b': 8,
+		'c': 9,
+	},
+]
+sum = 0
+for i in lst:
+	for key in i:
+		sum += i.get(key)
+print(sum)
+print("задание 11")
+lst = [
+	{
+		'a': 1,
+		'b': 2,
+		'c': 3
+	},
+	{
+		'a': 4,
+		'b': 5,
+		'c': 6
+	},
+	{
+		'a': 7,
+		'b': 8,
+		'c': 9,
+	},
+]
+for i in lst:
+	for key in i:
+		print(key, i.get(key))
+print("задание 12")
+lst = []
+
+for i in range(0, 3):
+	sub_lst = [] # создаем подсписок
+	for j in range(1, 4):
+		sub_lst.append(j) # заполняем подсписок числами
+	lst.append(sub_lst)
+print(lst)
+print( "задание 13")
+lst1 = []
+lst2 = ['a', 'b', 'c']
+for i in range(0, 2):
+	sub_lst = [] # создаем подсписок
+	for j in lst2:
+		sub_lst.append(j) # заполняем подсписок числами
+	lst1.append(sub_lst)
+print(lst1)		
