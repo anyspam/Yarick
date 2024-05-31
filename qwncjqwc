@@ -1,0 +1,82 @@
+#2\
+print('Задание 2')
+
+from tkinter import 
+root = Tk()     
+root.title("Мир")  
+'''root.iconbitmap(default="xxx.icon") '''
+root.geometry("900x800+500+100") 
+root.configure(background='green') 
+root.mainloop()
+
+#3
+from tkinter import *
+from tkinter import ttk     
+root = Tk()
+root.title("3")
+root.geometry("900x800+500+100")
+root.configure(background='purple') 
+btn = ttk.Button(text="КНОПКА")
+btn.configure()
+btn.pack()
+ppz = ttk.Entry()
+ppz.pack()
+root.mainloop()
+
+#4
+import tkinter as tk
+
+def text():
+    user_input = entry.get()
+    print(user_input)
+
+root = tk.Tk()
+root.title("3")
+root.geometry("600x400+700+300")
+root.configure(background='purple') 
+
+entry = tk.Entry(root)
+entry.pack()
+
+button = tk.Button(root, text="Вывести", command=text)
+button.pack()
+
+root.mainloop()
+
+#5
+
+import tkinter as tk
+
+def txt():
+    if label_text.get() == "Да":
+        label_text.set("Нет")
+    else:
+        label_text.set("Да")
+root = tk.Tk()
+root.title("Да/Нет")
+root.geometry("600x400+700+300")
+root.configure(background='purple') 
+label_text = tk.StringVar()
+label_text.set("да/Нет")
+label = tk.Label(root, textvariable=label_text)
+label.pack()
+button = tk.Button(root, text="Изменить текст", command=txt)
+button.pack()
+root.mainloop()
+
+
+#7
+import tkinter as tk
+from tkinter import ttk
+def score(value):
+    rating_label.config(text=f"Текущая оценка: {value}")
+root = tk.Tk()
+root.title("Оценка Сервиса")
+root.geometry("600x400+700+300")
+root.configure(background='purple')
+rating_scale = ttk.Scale(root, from_=0, to=100, orient='horizontal', command=score)
+rating_scale.pack()
+rating_label = ttk.Label(root, text="Текущая оценка: 0")
+rating_label.pack()
+root.mainloop()
+  
