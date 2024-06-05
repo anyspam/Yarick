@@ -1,0 +1,36 @@
+#Модернизируйте предыдущие задания добавив Frame для организации интерфейса в отдельные блоки.
+import tkinter as tk
+from tkinter import messagebox
+
+# Функция для отображения характеристики студента
+def display_description(value):
+    descriptions = {
+        '1': 'Нуждается в исправлении',
+        '2': 'Удовлетворительно',
+        '3': 'Хорошо',
+        '4': 'Очень хорошо',
+        '5': 'Отлично'
+    }
+    messagebox.showinfo("Оценка студента", descriptions[value])
+
+# Создание главного окна
+root = tk.Tk()
+root.title("5-балльная шкала оценки")
+
+# Создание фрейма для радиокнопок
+frame = tk.Frame(root)
+frame.pack(padx=10, pady=10)
+
+# Переменная для хранения значения выбранной радиокнопки
+rating = tk.StringVar(value='0')
+
+# Создание радиокнопок внутри фрейма
+for i in range(1, 6):
+    tk.Radiobutton(frame, 
+                   text=f'{i}', 
+                   variable=rating, 
+                   value=str(i), 
+                   command=lambda: display_description(rating.get())).pack(anchor=tk.W)
+
+# Запуск главного цикла
+root.mainloop()
