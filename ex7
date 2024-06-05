@@ -1,0 +1,59 @@
+7
+#Ваша задача - создать простой калькулятор с помощью библиотеки Tkinter. Калькулятор должен иметь кнопки для цифр, операций (+, -, *, /) и кнопку "Сбросить" для очистки экрана.
+from cProfile import label
+from curses import BUTTON1_CLICKED
+import tkinter as tk
+from turtle import width
+from tkinter import *
+from tkinter import ttk
+def on_click(button_text):
+    if button_text == "Сбросить":
+        entry_var.set("")
+    else:
+        current_text = entry_var.get()
+        entry_var.set(current_text + button_text)
+def on_equal():
+    try:
+        result = eval(entry_var.get())
+        entry_var.set(str(result))
+    except Exception as e:
+        entry_var.set("Ошибка")
+# Создание основного окна
+root = tk.Tk()
+root.title("Калькулятор")
+root.geometry ('700x600+700+200')
+# Переменная для хранения ввода пользователя
+entry_var = tk.StringVar()
+# Поле ввода
+entry = tk.Entry(root, textvariable=entry_var, justify='right')
+entry.grid(row=0, column=0, columnspan=4, sticky="nsew")
+# Кнопки калькулятора
+buttons = [
+    '//','%','**','Сбросить',
+    '7', '8', '9', '+',
+    '4', '5', '6', '-', 
+    '1', '2', '3', '/',
+    '.','0', '*',
+    '='
+]
+
+# Создание и размещение кнопок
+Label = ttk.Label(text='')
+Label.pack
+row = 1
+col = 0
+for button_text in buttons:
+    button = tk.Button(root, text=button_text, command=lambda bt=button_text: on_click(bt) if bt != "=" else on_equal())
+    button.grid(row=row, column=col, sticky="nsew")
+    col += 1
+    if col > 3:
+        col = 0
+        row += 1
+
+# Разрешить изменение размера для всех ячеек сетки
+for i in range(4):
+    root.grid_columnconfigure(i, weight=1)
+for i in range(5):
+    root.grid_rowconfigure(i, weight=1)
+
+root.mainloop()
